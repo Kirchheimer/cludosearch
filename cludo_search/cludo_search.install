@@ -1,0 +1,23 @@
+<?php
+/**
+ * @file
+ *    install, update, and uninstall hooks
+ * @see cludo_search.module
+ */
+
+/**
+ * Implements hook_uninstall().
+ *   drop settings
+ */
+function cludo_search_uninstall() {
+
+  $field_keys =  array(
+    'searchUrl',
+    'customerId',
+    'customerId',
+  );
+
+  foreach ($field_keys as $field) {
+    variable_del('cludo_search_' . $field);
+  }
+}

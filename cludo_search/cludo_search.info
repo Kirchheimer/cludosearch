@@ -1,0 +1,9 @@
+; $Id cludo_search.info $
+name = "Cludo Search"
+package = Cludo Search
+description = "Provides a search interface to a dedicated Cludo Search."
+core = 7.x
+configure = admin/config/search/cludo_search/settings
+
+stylesheets[all][] = theme/cludo_search.css
+
