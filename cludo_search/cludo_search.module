@@ -24,7 +24,7 @@ function cludo_search_help($path, $arg) {
       $output = '';
       $output .= '<h2>' . t('About') . '</h2>' . PHP_EOL;
       $output .= '<p>' . t('The cludo search module provides a search form.') . '</p>' . PHP_EOL;
-      $output .= '<p>' . t('If you will use core search along with this module, core search results will show up normally at <code>search/{search terms}</code>, while cludo search searches will show up at <code>csearch/{search terms}</code>.') . '</p>' . PHP_EOL;
+      $output .= '<p>' . t('If you will use core search along with this module, core search results will show up normally at <code>search/{search terms}</code>, while Cludo Search searches will show up at <code>csearch/{search terms}</code>.') . '</p>' . PHP_EOL;
       $output .= '<h2>' . t('Blocks') . '</h2>';
       $output .= '<p>' . t('The module provides:') . '</p>' . PHP_EOL;
       $output .= '<ol><li>' . t('the block search form') . '</li>' . PHP_EOL;
@@ -32,25 +32,10 @@ function cludo_search_help($path, $arg) {
 
       return $output;
    case 'admin/config/cludo_search/settings':
-      $output =  '<p>' . t('The Cludo Search settings specify the interface to your CS device. The search results obtained via that interface are controlled by the Google Search Appliance configuration itself. Visit the <a href="@CS-help">Cludo Search help section</a> for more information on setting up the integration.', array('@CS-help' => url('admin/help/cludo_search'))) . '</p>';
+      $output =  '<p>' . t('The Cludo Search account settings . Visit <a href="@CS-help">Cludo Search help section</a> for more information on setting up the integration.', array('@CS-help' => url('admin/help/cludo_search'))) . '</p>';
 
       return $output;
-    //@TODO: I don't think this is displayed
-    case 'cludo_search#error_CS_no_results':
-      $no_results_tactics = array(
-        t('Check if your spelling is correct.'),
-        t('Remove quotes around phrases: <em>bike parking</em> will often show more results than <em>&quot;bike parking&quot;</em>.'),
-        t('Try more general or different keywords.'),
-      );
-      $no_results_message = array(
-        'items' => $no_results_tactics,
-        'title' => NULL,
-        'type' => 'ul',
-        'attributes' => array(),
-      );
-      $output = theme_item_list($no_results_message);
-      return $output;
-  }
+    }
 } 
  
 
